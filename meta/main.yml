@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Pablo Castillo
+  company: Crush & Lovely
+  description: Transfers dotenv files to a server for an application
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+  categories:
+    - system
+    - cloud
+dependencies: []

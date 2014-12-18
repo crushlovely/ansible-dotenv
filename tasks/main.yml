@@ -1,0 +1,3 @@
+---
+- name: Base | Copy .env to shared location
+  copy: src=files/.env.{{ server_env }} dest={{ app_path }}/shared/.env owner=deploy group=deploy force=yes backup=yes
