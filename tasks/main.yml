@@ -1,3 +1,6 @@
 ---
 - name: Base | Copy .env to shared location
-  copy: src=files/.env.{{ server_env }} dest={{ app_path }}/shared/.env owner=deploy group=deploy force=yes backup=yes
+  file: path={{ app_path }}/shared/ owner={{ app.user }} group={{ app.user }} state=directory
+
+- name: Base | Copy .env to shared location
+  copy: src=files/.env.{{ server_env }} dest={{ app_path }}/shared/.env owner={{ app.user }} group={{ app.user }} force=no backup=yes
