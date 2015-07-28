@@ -16,7 +16,7 @@ dependencies:
 test:
   override:
     # Get nginx role
-    - ansible-galaxy install -f https://github.com/crushlovely/ansible-dotenv.git,remotes/origin/$CIRCLE_BRANCH -p ./tests/roles/
+    - ansible-galaxy install -f https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git,remotes/origin/$CIRCLE_BRANCH -p ./tests/
 
     # Check the role/playbook's syntax.
     - ansible-playbook --syntax-check -i tests/inventory tests/test.yml

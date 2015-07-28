@@ -1,6 +1,5 @@
 ---
-server_env: qa
-app_path: /home/ubuntu/test
-app:
-  user: ubuntu
-  group: ubuntu
+dotenv:
+  path: ""
+  user: ""
+  group: ""

@@ -1,0 +1,5 @@
+{% if dotenv.vars %}
+{% for key, value in dotenv.vars|dictsort %}
+{{ key.upper() }}={{ value }}
+{% endfor %}
+{% endif %}
