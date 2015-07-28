@@ -3,5 +3,12 @@
   connection: local
   remote_user: ubuntu
   gather_facts: false
+  vars:
+    dotenv:
+      path: "/home/ubuntu/test"
+      user: "ubuntu"
+      group: "ubuntu"
+      vars:
+        rails_env: "production"
   roles:
     - ansible-dotenv

@@ -1,6 +1,6 @@
 ---
-- name: Base | Copy .env to shared location
-  file: path={{ app_path }}/shared/ owner={{ app.user }} group={{ app.user }} state=directory
+- name: Ensure the directory for .env exists
+  file: path={{ dotenv.path }} owner={{ dotenv.user }} group={{ dotenv.group }} state=directory
 
-- name: Base | Copy .env to shared location
-  copy: src=files/.env.{{ server_env }} dest={{ app_path }}/shared/.env owner={{ app.user }} group={{ app.user }} force=yes backup=yes
+- name: Create or update .env file
+  template: src=dotenv.j2 dest={{ dotenv.path }}/.env owner={{ dotenv.user }} group={{ dotenv.group }} backup=yes
